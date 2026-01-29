@@ -1,8 +1,8 @@
 data = 'input.txt'
-rotations = []
 
 try:
     with open(data, 'r') as file:
+        rotations = []
         for line in file:
             if 'L' in line:
                 pos_L = line.index('L')
@@ -11,9 +11,9 @@ try:
                 pos_R = line.index('R')
                 rotations.append(line[pos_R:])
             else:
-                print('Formato de datos no esperado')
+                print('Data format error')
 except FileNotFoundError:
-    print(f'Error: el archivo {data} no se encontró.')
+    print(f'Error: the file {data} was not found.')
 
 dial = 50
 password = 0
