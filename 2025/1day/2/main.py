@@ -1,31 +1,23 @@
 data = 'input.txt'
 
 try:
-    with open(data, 'r') as file:
-        rotations = []
-        for line in file:
+    with open(data, 'r', encoding='utf-8-sig') as f:
+        password = 0
+        dial = 50
+        for line in f:
+            line = line.strip()
             if 'L' in line:
-                pos_L = line.index('L')
-                rotations.append(line[pos_L:])
+                for _ in range(int(line[1:])):
+                    dial = (dial - 1) % 100
+                    if dial == 0:
+                        password += 1
             elif 'R' in line:
-                pos_R = line.index('R')
-                rotations.append(line[pos_R:])
+                for _ in range(int(line[1:])):
+                    dial = (dial + 1) % 100
+                    if dial == 0:
+                        password += 1
             else:
                 print('Data format error')
+        print(password)
 except FileNotFoundError:
     print(f'Error: the file {data} was not found.')
-
-dial = 50
-password = 0
-for instruction in rotations:
-    if 'L' in instruction:
-        for _ in range(int(instruction[1:])):
-            dial = (dial - 1) % 100
-            if dial == 0:
-                password += 1
-    elif 'R' in instruction:
-        for _ in range(int(instruction[1:])):
-            dial = (dial + 1) % 100
-            if dial == 0:
-                password += 1
-print(password)
