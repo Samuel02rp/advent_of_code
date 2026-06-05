@@ -12,7 +12,7 @@ Below is the breakdown of the years I have participated in and the progress I've
 
 | Year | Last day done | Stars Earned |
 | :-------: | :-------: | :-------: |
-| [2025](./2025) | [Day 3](https://adventofcode.com/2025/day/3) | ⭐ 6 / 24 |
+| [2025](./2025) | [Day 4](https://adventofcode.com/2025/day/4) | ⭐ 8 / 24 |
 
 ---
 
